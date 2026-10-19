@@ -2,6 +2,8 @@
 -- select tablename from pg_tables;
 -- CREATE DATABASE koda_b1_db;
 
+SELECT tablename FROM pg_tables WHERE schemaname = 'public'
+
 -- CREATE TABLE kategori (
 --     id Serial PRIMARY KEY,
 --     nama_kategori VARCHAR(255) NOT NULL
