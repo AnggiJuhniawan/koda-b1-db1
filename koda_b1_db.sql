@@ -1,12 +1,22 @@
 -- select datname from pg_database
 -- select tablename from pg_tables;
 -- CREATE DATABASE koda_b1_db;
--- CREATE TABLE users (
+
+-- CREATE TABLE kategori (
+--     id Serial PRIMARY KEY,
+--     nama_kategori VARCHAR(255) NOT NULL
+-- )
+
+-- CREATE TABLE product (
 --     id SERIAL PRIMARY KEY,
 --     email VARCHAR(80) NOT NULL UNIQUE,
 --     password_hash VARCHAR(255) NOT NULL,
---     created_at TIMESTAMPTZ DEFAULT NOW()
+--     created_at TIMESTAMPTZ DEFAULT NOW(),
+--     id_kategori INT REFERENCES kategori(id)
 -- );
+
+-- ALTER TABLE product ADD CONSTRAINT fk_product_kategori FOREIGN KEY (kategori_id) REFERENCES kategori(id);
+
 -- Select * from users;
 -- INSERT INTO users (email, password_hash) VALUES
 -- ('admin@gmail.com', '22222222'),
@@ -31,13 +41,13 @@
 
 -- select * from users where email='admin@gmail.com'
 
-INSERT INTO kategori (nama_kategori) VALUES
-('Minuman'),
-('Makanan');
-SELECT * FROM kategori;
+-- INSERT INTO kategori (nama_kategori) VALUES
+-- ('Minuman'),
+-- ('Makanan');
+-- SELECT * FROM kategori;
 
-INSERT INTO product (nama_product, harga, stok, id_kategori) VALUES
-('Susu', 2000, 5, "1"),
-('Pizza', 2000, 5, "2");
+-- INSERT INTO product (nama_product, harga, stok, id_kategori) VALUES
+-- ('Susu', 2000, 5, "1"),
+-- ('Pizza', 2000, 5, "2");
 
 -- Select p.name_product, p.stok, k.name_kategori FROM product p JOIN kategori k ON p.id_kategori = k.id_kategori; 
