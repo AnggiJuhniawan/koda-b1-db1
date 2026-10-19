@@ -1,0 +1,15 @@
+-- select datname from pg_database
+-- select tablename from pg_tables;
+-- CREATE DATABASE koda_b1_db;
+-- CREATE TABLE users (
+--     id SERIAL PRIMARY KEY,
+--     email VARCHAR(80) NOT NULL UNIQUE,
+--     password_hash VARCHAR(255) NOT NULL,
+--     created_at TIMESTAMPTZ DEFAULT NOW()
+-- );
+-- Select * from users;
+-- INSERT INTO users (email, password_hash) VALUES
+-- ('admin@gmail.com', '22222222'),
+-- ('admin2@gmail.com', '12345678');
+-- UPDATE users SET email = 'minda@gmail.com' where id = 1;
+-- DELETE from users where id = 1;
