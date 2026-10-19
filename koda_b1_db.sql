@@ -10,6 +10,34 @@
 -- Select * from users;
 -- INSERT INTO users (email, password_hash) VALUES
 -- ('admin@gmail.com', '22222222'),
--- ('admin2@gmail.com', '12345678');
+-- ('admin10@gmail.com', '12345678'),
+-- ('admin1@gmail.com', '12345678'),
+-- ('admin3@gmail.com', '12345678'),
+-- ('admin4@gmail.com', '12345678'),
+-- ('admin5@gmail.com', '12345678'),
+-- ('admin6@gmail.com', '12345678'),
+-- ('admin7@gmail.com', '12345678'),
+-- ('admin8@gmail.com', '12345678'),
+-- ('admin9@gmail.com', '12345678');
+
 -- UPDATE users SET email = 'minda@gmail.com' where id = 1;
+
 -- DELETE from users where id = 1;
+
+-- CREATE TABLE test (
+--     id SERIAL PRIMARY KEY
+-- )
+-- DROP TABLE test;
+
+-- select * from users where email='admin@gmail.com'
+
+INSERT INTO kategori (nama_kategori) VALUES
+('Minuman'),
+('Makanan');
+SELECT * FROM kategori;
+
+INSERT INTO product (nama_product, harga, stok, id_kategori) VALUES
+('Susu', 2000, 5, "1"),
+('Pizza', 2000, 5, "2");
+
+-- Select p.name_product, p.stok, k.name_kategori FROM product p JOIN kategori k ON p.id_kategori = k.id_kategori; 
