@@ -1,12 +1,71 @@
 -- SELECT tablename FROM pg_tables WHERE schemaname = 'public'
-Select id, "first_name", "last_name" from actors 
-WHere first_name ILIKE 'John%'
-LIMIT 100
-OFFSET 0;
+
+-- Select id, "first_name", "last_name" from actors 
+-- WHere first_name ILIKE 'John%'
+-- LIMIT 100
+-- OFFSET 0;
+
+-- select kiri.id AS ai, kiri.name, kanan.genre from movies kiri
+-- JOIN movies_genres kanan ON kanan.movie_id = kiri.id
+-- Limit 10;
+
+-- SELECT movies.id, movies.name, movies_genres.genre
+-- FROM movies
+-- LEFT JOIN movies_genres
+--     ON movies.id = movies_genres.movie_id
+-- LIMIT 10;
+
+-- SELECT actors.id AS Actor, actors.first_name, actors.last_name, roles.role, movies.name AS Movies
+-- FROM actors 
+-- LEFT JOIN roles
+--     ON actors.id = roles.actor_id
+-- LEFT JOIN movies
+--     ON roles.movie_id = movies.id;
+-- LIMIT 100;
+
+
+-- Constraint
+-- CREATE TABLE users_serial (
+--     id SERIAL PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL
+-- )
+
+-- CREATE TABLE user_identity (
+--     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--     name VARCHAR(100) not null
+-- )
+
+-- CREATE TABLE categories (
+--     id INTEGER GENERATED AlWAYS AS IDENTITY PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL UNIQUE
+-- );
+
+-- CREATE TABLE products(
+--     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL,
+--     price NUMERIC(12, 2) NOT NULL CHECK(price > 0),
+--     category_id INTEGER NOT NULL REFERENCES categories(id)
+-- )
+
+INSERT INTO categories (name)
+VALUES ('Sendal');
+
+-- INSERT INTO products(name, price, category_id)
+-- VALUES('Sneaker', 150000, 1)
+-- select * from products
 
 
 
 
+
+
+
+
+
+
+
+
+-- ==========================================================
 -- INSERT INTO actors (id, first_name, last_name, gender)
 -- SELECT
 --     id,
