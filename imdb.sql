@@ -47,14 +47,38 @@
 --     category_id INTEGER NOT NULL REFERENCES categories(id)
 -- )
 
-INSERT INTO categories (name)
-VALUES ('Sendal');
+-- INSERT INTO categories (name)
+-- VALUES ('Sendal');
 
 -- INSERT INTO products(name, price, category_id)
 -- VALUES('Sneaker', 150000, 1)
 -- select * from products
 
+-- GROUP and AGGREGATION
+-- CREATE TABLE saving (
+--     id BIGINT GENERATED ALWAYS as Identity PRIMARY Key,
+--     amount int NOT NULL,
+--     category VARCHAR(100) not Null UNIQUE,
+--     created_at TIMESTAMP DEFAULT NOW()
+-- );
 
+-- select category, MIN(amount) AS nilai_kecil,MAX(amount) AS nilai_besar from saving GROUP BY category, amount HAVING amount > 30000;
+
+-- INSERT INTO saving(amount, category) VALUES
+-- (20000, 'TOP UP GAME'),
+-- (50000, 'TOP UP PULSA'),
+-- (40000, 'TOP UP E-Money'),
+-- (60000, 'PAKAIAN'),
+-- (70000, 'SEPATU'),
+-- (100000, 'TOP UP LISTRIK');
+
+SELECT m.id, m.name, STRING_AGG(mg.genre, ', ') AS genres
+FROM movies m
+JOIN movies_genres mg
+    ON mg.movie_id = m.id
+GROUP BY m.id, m.name
+ORDER BY m.id ASC
+LIMIT 10;
 
 
 
